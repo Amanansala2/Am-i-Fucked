@@ -1,0 +1,128 @@
+	<!DOCTYPE html>
+		<html>
+			<head>
+				<title>Am I Fucked?</title>
+
+				<link href="style.css" rel="stylesheet">
+
+			</head>
+			<body>
+				<h1 id="title"><a href="index.html">Am I Fucked</a></h1>
+
+
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+
+
+				<div id ="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis cursus viverra quam, vitae lacinia risus faucibus in. Pellentesque tempus euismod cursus. Mauris sed tincidunt velit, quis interdum arcu. Aenean venenatis sit amet massa sed porttitor. Etiam laoreet suscipit lorem, ac sagittis odio commodo tristique. Vestibulum consequat lobortis urna ac auctor. Integer risus ipsum, rhoncus et consectetur ut, maximus quis est. Ut faucibus, leo a facilisis dapibus, nunc mi iaculis magna, in vehicula orci dolor interdum enim. Praesent eu nisl ullamcorper, accumsan turpis sed, mattis nunc.</div>
+
+
+				<div id="shit">
+					<input id="classname" type="text" placeholder="Class Name">
+				<br>
+				<br>
+					<button id="start">Start</button>
+
+				</div>
+
+				<div id="evaluation">
+					<h2>Syllabus</h2>
+					
+					<input id="cat0" type="text" placeholder="Assignment 1"> <br><br>
+					<input id="cat1" type="text" placeholder="Assignment 2"> <br><br>
+					<input id="cat2" type="text" placeholder="Midterm"> <br><br>
+
+					<button id="add-cat">+</button>
+				</div>	
+
+				<div id="nav">
+
+				<button id ="next">Next</button>
+				<button id ="back">Back</button>
+
+
+				</div>
+
+			</body>
+
+			<script>
+
+			var start 		= document.getElementById('start');
+			var classname 	= document.getElementById('classname');
+			var e 			= document.getElementById('evaluation');
+			var nav 		= document.getElementById("nav");
+			var add_cat 	= document.getElementById('add-cat');
+			var next 		= document.getElementById('next');
+			var back   		= document.getElementById('back');
+
+
+
+			var cla = {
+				name: "",
+				categories: [],
+			};
+
+			function Category(name) {
+				this.name = name;
+				var worth;
+				var achieved;
+			}
+
+
+			console.log(e.getElementsByTagName("input").length);
+			console.log(e.getElementsByTagName(null).length);
+
+
+
+			start.onclick = function() {
+				classname.style.display = "none";
+				document.getElementById('desc').style.display ="none";
+				start.style.display = "none";
+				e.style.display = "inline-block";
+				cla.name = classname.value;
+
+	
+			}
+
+			add_cat.onclick = function () {
+				var newinput			= document.createElement("input");
+				var b 					= document.createElement("br");
+				var b2					= document.createElement("br");
+				newinput.id 			= "cat" + e.getElementsByTagName("input").length;
+				newinput.placeholder 	= "New Category";
+				e.appendChild(newinput);
+				e.appendChild(b);
+				e.appendChild(b2);
+				add_cat.parentNode.appendChild(add_cat);
+
+			}
+
+			next.onclick = function () {
+				var c = "cat";
+				for(i = 0; i<e.getElementsByTagName("input").length; i++) {
+					var num2string = i.toString();
+					var id = c.concat(num2string);
+					console.log(id);
+					var category = new Category(document.getElementById(id).value);
+					cla.categories.push(category);
+				 	console.log(cla.categories);
+				 }
+
+			}
+
+		
+
+
+			</script>
+
+		</html>

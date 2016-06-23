@@ -1,0 +1,36 @@
+#title {
+	text-align: center;
+}
+
+#desc {
+	width:50%;
+	height:200px;
+	margin: 0 auto;
+
+}
+
+#shit {
+	text-align: center;
+}
+
+
+#evaluation {
+	text-align: center;
+	margin-left: 45%;
+	display:none;
+
+}
+
+#nav {
+	width:30%;
+	margin:0 auto;
+	
+
+	
+}
+
+#next {
+	float:right;
+}
+
+
